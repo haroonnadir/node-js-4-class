@@ -1,0 +1,39 @@
+<%- include('partials/header', { title: 'Student Table' }) %>
+
+<h2>Student List</h2>
+
+<table border="1" cellpadding="10" cellspacing="0">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Course</th>
+            <th>Gender</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% 
+        const students = [
+            { id: 1, name: 'Ali Khan', email: 'ali@gmail.com', course: 'CS', gender: 'Male' },
+            { id: 2, name: 'Sara Ahmed', email: 'sara@gmail.com', course: 'IT', gender: 'Female' },
+            { id: 3, name: 'Usman Ali', email: 'usman@gmail.com', course: 'SE', gender: 'Male' },
+            { id: 4, name: 'Ayesha Noor', email: 'ayesha@gmail.com', course: 'BBA', gender: 'Female' },
+            { id: 5, name: 'Hamza Sheikh', email: 'hamza@gmail.com', course: 'AI', gender: 'Male' }
+        ];
+        %>
+
+        <% students.forEach(student => { %>
+            <tr>
+                <td><%= student.id %></td>
+                <td><%= student.name %></td>
+                <td><%= student.email %></td>
+                <td><%= student.course %></td>
+                <td><%= student.gender %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,14 @@
+<%- include('partials/header', { title: 'Form Page' }) %>
+
+<h1>Contact Form</h1>
+
+<% if (message) { %>
+    <p style="color:green;"><%= message %></p>
+<% } %>
+
+<form action="/form" method="POST">
+    <input type="text" name="name" placeholder="Enter Name" required>
+    <button type="submit">Submit</button>
+</form>
+
+<%- include('partials/footer') %>
